@@ -6,10 +6,10 @@ text:{
     type:String,
     require:true
 },
-senderId:{
+userId:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"user"
-}
+}]
 })
 
 const roomSchema= mongoose.model("room",room);
