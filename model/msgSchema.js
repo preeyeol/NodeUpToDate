@@ -10,7 +10,10 @@ senderId:{
     type:mongoose.Schema.Types.ObjectId,
     ref:"user"
 },
-roomID:{},
+roomID:{
+        type:mongoose.Schema.Types.ObjectId,
+    ref:"room"
+},
 createdAt:{
     type: Date,
     default: new Date()

@@ -2,10 +2,11 @@ const mongoose=require("mongoose");
 
 
 const room=mongoose.Schema({
-text:{
+roomId:{
     type:String,
-    require:true
+    unique:true
 },
+name:String,
 userId:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"user"
