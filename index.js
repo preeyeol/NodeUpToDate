@@ -56,8 +56,10 @@ io.on("connection", (socket) => {
     socket.join(rooms.roomId);
     
     if(rooms.userId.includes(socket.user._id)){
-        socket.emit("room_join",`You are already in the room`);
-      return
+      return errorHandler({
+        msg:"You are already in room",
+        statusCode: 400
+      })
     }
     socket.broadcast
     .to(rooms.roomId)
